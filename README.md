@@ -4,6 +4,8 @@ Example todo app with rspec and cucumber
 
 Rails 4.2.4
 Ruby 2.0
+Rspec 
+Capybara
 
 
 * System dependencies
