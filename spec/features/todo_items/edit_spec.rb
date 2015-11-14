@@ -21,7 +21,6 @@ it "is successful with valid content" do
   fill_in "Content", with: "Lots of Milk"
   click_button "Save"
   expect(page).to_not have_content("Saved todo list item.")
-  expect(page).to have_content("Content can't be blank")
   todo_item.reload
   expect(todo_item.content).to eq("Milk")
 end
@@ -36,8 +35,9 @@ end
   fill_in "Content", with: ""
   click_button "Save"
   expect(page).to not_have_content("Saved todo list item.")
+  expect(page).to have_content("Content can't be blank")
   todo_item.reload
-  expect(todo_item.content).to eq("Lots of Milk")
+  expect(todo_item.content).to eq("Milk")
 end
 
 
